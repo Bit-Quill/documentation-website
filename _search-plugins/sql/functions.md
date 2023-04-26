@@ -68,7 +68,7 @@ sinh | `sinh(number T) -> double` | `SELECT sinh(0.5) FROM my-index LIMIT 1`
 tan | `tan(number T) -> double` | `SELECT tan(0.5) FROM my-index LIMIT 1`
 
 ## Date and time
-Functions marked with * are not yet implemented in PPL, with plans to support them in the near future.
+Functions marked with * have future PPL implementation on roadmap.
 
 Function | Specification | Example
 :--- | :--- | :---
@@ -111,7 +111,7 @@ to_days | `to_days(date) -> long` | `SELECT to_days(date '2008-10-07') FROM my-i
 week | `week(date[mode])  -> integer` | `SELECT week(date('2008-02-20')) FROM my-index LIMIT 1`
 week_of_year\* | `week_of_year(date[mode])  -> integer` | `SELECT week_of_year(date('2008-02-20')) FROM my-index LIMIT 1`
 year | `year(date) -> integer` | `SELECT year(date) FROM my-index LIMIT 1`
-yearweek\* | `yearweek(date, [mode])  -> integer` | `SELECT yearweek(date('2008-02-20')) FROM my-index LIMIT 1`
+yearweek\* | `yearweek(date[mode])  -> integer` | `SELECT yearweek(date('2008-02-20')) FROM my-index LIMIT 1`
 
 ## String
 
