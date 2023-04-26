@@ -68,6 +68,7 @@ sinh | `sinh(number T) -> double` | `SELECT sinh(0.5) FROM my-index LIMIT 1`
 tan | `tan(number T) -> double` | `SELECT tan(0.5) FROM my-index LIMIT 1`
 
 ## Date and time
+Functions marked with * are not yet implemented in PPL, with plans to support them in the near future.
 
 Function | Specification | Example
 :--- | :--- | :---
@@ -77,26 +78,40 @@ date | `date(date) -> date` | `SELECT date() FROM my-index LIMIT 1`
 date_format | `date_format(date, string) -> string` or `date_format(date, string, string) -> string` | `SELECT date_format(date, 'Y') FROM my-index LIMIT 1`
 date_sub | `date_sub(date, INTERVAL expr unit) -> date` | `SELECT date_sub(date('2008-01-02'), INTERVAL 31 day) FROM my-index LIMIT 1`
 dayofmonth | `dayofmonth(date) -> integer` | `SELECT dayofmonth(date) FROM my-index LIMIT 1`
+day_of_month\* | `day_of_month(date) -> integer` | `SELECT day_of_month(date) FROM my-index LIMIT 1`
 dayname | `dayname(date) -> string` | `SELECT dayname(date('2020-08-26')) FROM my-index LIMIT 1`
 dayofyear | `dayofyear(date) -> integer` | `SELECT dayofyear(date('2020-08-26')) FROM my-index LIMIT 1`
+day_of_year\* | `day_of_year(date) -> integer` | `SELECT day_of_year(date('2020-08-26')) FROM my-index LIMIT 1`
 dayofweek | `dayofweek(date) -> integer` | `SELECT dayofweek(date('2020-08-26')) FROM my-index LIMIT 1`
+day_of_week\* | `day_of_week(date) -> integer` | `SELECT day_of_week(date('2020-08-26')) FROM my-index LIMIT 1`
+extract\* | `extract(part FROM date) -> integer` | `SELECT extract(MONTH FROM datetime('2020-08-26 10:11:12'))`
 from_days | `from_days(N) -> integer` | `SELECT from_days(733687) FROM my-index LIMIT 1`
 hour | `hour(time) -> integer` | `SELECT hour((time '01:02:03')) FROM my-index LIMIT 1`
+hour_of_day\* | `hour_of_day(time) -> integer` | `SELECT hour_of_day((time '01:02:03')) FROM my-index LIMIT 1`
+last_day\* | `last_day(date) -> integer` | `SELECT last_day(date('2020-08-26'))`
 maketime | `maketime(integer, integer, integer) -> date` | `SELECT maketime(1, 2, 3) FROM my-index LIMIT 1`
 microsecond | `microsecond(expr) -> integer` | `SELECT microsecond((time '01:02:03.123456')) FROM my-index LIMIT 1`
 minute | `minute(expr) -> integer` | `SELECT minute((time '01:02:03')) FROM my-index LIMIT 1`
+minute_of_day\* | `minute_of_day(expr) -> integer` | `SELECT minute_of_day((time '01:02:03')) FROM my-index LIMIT 1`
+minute_of_hour\* | `minute_of_hour(expr) -> integer` | `SELECT minute_of_hour((time '01:02:03')) FROM my-index LIMIT 1`
 month | `month(date) -> integer` | `SELECT month(date) FROM my-index`
+month_of_year\* | `month_of_year(date) -> integer` | `SELECT month_of_year(date) FROM my-index`
 monthname | `monthname(date) -> string` | `SELECT monthname(date) FROM my-index`
 now | `now() -> date` | `SELECT now() FROM my-index LIMIT 1`
 quarter | `quarter(date) -> integer` | `SELECT quarter(date('2020-08-26')) FROM my-index LIMIT 1`
 second | `second(time) -> integer` | `SELECT second((time '01:02:03')) FROM my-index LIMIT 1`
+second_of_minute\* | `second_of_minute(time) -> integer` | `SELECT second_of_minute((time '01:02:03')) FROM my-index LIMIT 1`
+str_to_date\* | `str_to_date(string, format) -> date` | `SELECT str_to_date("March 10 2000", %M %d %Y")`
 subdate | `subdate(date, INTERVAL expr unit) -> date, datetime` | `SELECT subdate(date('2008-01-02'), INTERVAL 31 day) FROM my-index LIMIT 1`
+sec_to_time\* | `sec_to_time(integer) -> date` | `SELECT sec_to_time(10000)`
 time | `time(expr) -> time` | `SELECT time('13:49:00') FROM my-index LIMIT 1`
 time_to_sec | `time_to_sec(time) -> long` | `SELECT time_to_sec(time '22:23:00') FROM my-index LIMIT 1`
 timestamp | `timestamp(date) -> date` | `SELECT timestamp(date) FROM my-index LIMIT 1`
 to_days | `to_days(date) -> long` | `SELECT to_days(date '2008-10-07') FROM my-index LIMIT 1`
 week | `week(date[mode])  -> integer` | `SELECT week(date('2008-02-20')) FROM my-index LIMIT 1`
+week_of_year\* | `week_of_year(date[mode])  -> integer` | `SELECT week_of_year(date('2008-02-20')) FROM my-index LIMIT 1`
 year | `year(date) -> integer` | `SELECT year(date) FROM my-index LIMIT 1`
+yearweek\* | `yearweek(date, [mode])  -> integer` | `SELECT yearweek(date('2008-02-20')) FROM my-index LIMIT 1`
 
 ## String
 
