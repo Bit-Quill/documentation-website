@@ -83,7 +83,7 @@ current_timestamp | `current_timestamp() -> date` | `SELECT current_timestamp() 
 date | `date(date) -> date` | `SELECT date() FROM my-index LIMIT 1`
 datediff | `datediff(date, date) -> integer` | `SELECT datediff(date('2000-01-02'), date('2000-01-01'))`
 datetime | `datetime(string) -> datetime` | `SELECT datetime('2008-12-25 00:00:00')`
-date_add | `date_add(date, INTERVAL integer UNIT
+date_add | `date_add(date, INTERVAL integer UNIT)` | `SELECT date_add('2020-08-26'), INTERVAL 1 HOUR)`
 date_format | `date_format(date, string) -> string` or `date_format(date, string, string) -> string` | `SELECT date_format(date, 'Y') FROM my-index LIMIT 1`
 date_sub | `date_sub(date, INTERVAL expr unit) -> date` | `SELECT date_sub(date('2008-01-02'), INTERVAL 31 day) FROM my-index LIMIT 1`
 dayofmonth | `dayofmonth(date) -> integer` | `SELECT dayofmonth(date) FROM my-index LIMIT 1`
