@@ -225,3 +225,63 @@ The results contain documents that match the wildcard expression:
 | account_number | address
 :--- | :---
 1 | 880 Holmes Lane
+
+## Nested query
+
+The nested function is used in the `SELECT` clause to unnest nested object type collections. The nested collection is flattened and a cartesian product is returned when querying against two nested objects.
+
+### Syntax
+
+The `field_expression` parameter is required, and the `path_expression` parameter is optional. Dot notation is used to show nesting level for `field_expression` and `path_expression` parameters. For example `nestedObj.innerFieldName` denotes a field nested one level. If the user does not provide the `path_expression` parameter it will be generated dynamically. For example the field `user.office.cubicle` would dynamically generate the path `user.office`.
+
+```sql
+nested(field_expression | field_expression, path_expression)
+```
+
+### Flattening
+
+Flattening is the process of changing the response format from OpenSearch by making the full path of an object the key, and the object it refers to the value.
+
+Sample Input:
+```json
+{
+  "comment": {
+    "data": "abc"
+  }
+}
+```
+
+Sample Output:
+```json
+[
+  { "comment.data": "abc" }
+]
+```
+
+### Query Example
+
+The following example uses a nested query:
+
+```sql
+SELECT nested(comment.data), nested(message.info) FROM nested_objects;
+```
+
+Dataset:
+```json
+{
+  "comment": {
+    "data": "abc"
+  },
+  "message": [
+    { "info": "letter1" },
+    { "info": "letter2" }
+  ]
+}
+```
+
+The results contain documents that match the nested query:
+
+| nested(comment.data) | nested(message.info)
+:----------------------| :---
+abc                    | letter1
+abc                    | letter2
