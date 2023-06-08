@@ -154,23 +154,23 @@ yearweek\* | `yearweek(date[mode])  -> integer` | `SELECT yearweek(date('2008-02
 Function | Specification | Example
 :--- | :--- | :---
 ascii | `ascii(string T) -> integer` | `SELECT ascii(name.keyword) FROM my-index LIMIT 1`
-concat | `concat(str1, str2) -> string` | `SELECT concat('hello', 'world') FROM my-index LIMIT 1`
-concat_ws | `concat_ws(separator, string, string…) -> string` | `SELECT concat_ws("-", "Tutorial", "is", "fun!") FROM my-index LIMIT 1`
-left | `left(string T, integer) -> T` | `SELECT left('hello', 2) FROM my-index LIMIT 1`
-length | `length(string) -> integer` | `SELECT length('hello') FROM my-index LIMIT 1`
-locate | `locate(string, string, integer) -> integer` or `locate(string, string) -> INTEGER` | `SELECT locate('o', 'hello') FROM my-index LIMIT 1`, `SELECT locate('l', 'hello', 3) FROM my-index LIMIT 1`
-replace | `replace(string T, string, string) -> T` | `SELECT replace('hello', 'l', 'x') FROM my-index LIMIT 1`
-right | `right(string T, integer) -> T` | `SELECT right('hello', 1) FROM my-index LIMIT 1`
+concat | `concat(str1, str2) -> string` | `SELECT concat('hello', 'world')`
+concat_ws | `concat_ws(separator, string, string…) -> string` | `SELECT concat_ws("-", "Tutorial", "is", "fun!")`
+left | `left(string T, integer) -> T` | `SELECT left('hello', 2)`
+length | `length(string) -> integer` | `SELECT length('hello')`
+locate | `locate(string, string, integer) -> integer` or `locate(string, string) -> INTEGER` | `SELECT locate('o', 'hello')`, `SELECT locate('l', 'hello', 3)`
+replace | `replace(string T, string, string) -> T` | `SELECT replace('hello', 'l', 'x')`
+right | `right(string T, integer) -> T` | `SELECT right('hello', 1)`
 rtrim | `rtrim(string T) -> T` | `SELECT rtrim(name.keyword) FROM my-index LIMIT 1`
 substring | `substring(string T, integer, integer) -> T` | `SELECT substring(name.keyword, 2,5) FROM my-index LIMIT 1`
-trim | `trim(string T) -> T` | `SELECT trim('   hello') FROM my-index LIMIT 1`
-upper | `upper(string T) -> T` | `SELECT upper('helloworld') FROM my-index LIMIT 1`
+trim | `trim(string T) -> T` | `SELECT trim('   hello')`
+upper | `upper(string T) -> T` | `SELECT upper('helloworld')`
 
 ## Aggregate
 
 Function | Specification | Example
 :--- | :--- | :---
-avg | `avg(number T) -> T` | `SELECT avg(2, 3) FROM my-index LIMIT 1`
+avg | `avg(number T) -> T` | `SELECT avg(2, 3)`
 count | `count(number T) -> T` | `SELECT count(date) FROM my-index LIMIT 1`
 min | `min(number T, number) -> T` | `SELECT min(2, 3) FROM my-index LIMIT 1`
 show | `show(string T) -> T` | `SHOW TABLES LIKE my-index`
