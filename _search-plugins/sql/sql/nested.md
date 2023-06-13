@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Nested Function
-parent: SQL and PPL
-nav_order: 12
+parent: SQL
+grand_parent: SQL and PPL
+nav_order: 13
 redirect_from:
-- /search-plugins/sql/sql-nested/
+- /search-plugins/sql/nested/
 ---
 
 # Nested
@@ -20,6 +21,10 @@ The `field_expression` parameter is required and the `path_expression` parameter
 ```sql
 nested(field_expression | field_expression, path_expression)
 ```
+
+### Using `*` With Nested In The SELECT Clause
+
+The `*` character can be used in the `nested` function `field_expression` parameter in the `SELECT` clause to select all inner fields to a nested object. For example a user could have a `field_expression` parameter of `nestedObj.*` to denote all inner fields under `nestedObj`.
 
 ### Flattening
 
