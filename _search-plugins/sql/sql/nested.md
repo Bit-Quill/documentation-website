@@ -4,6 +4,7 @@ title: Nested Function
 parent: SQL
 grand_parent: SQL and PPL
 nav_order: 13
+has_toc: true
 redirect_from:
 - /search-plugins/sql/nested/
 ---
@@ -12,7 +13,7 @@ redirect_from:
 
 ## Nested In SELECT Clause
 
-The nested function is used in the `SELECT` clause to unnest nested object type collections. The nested collection is flattened and a cartesian product is returned when querying against two or more nested collections. The nested function is supported in the V2 engine in the `SELECT` and `WHERE` clauses, see [query-processing-engines](https://opensearch.org/docs/latest/search-plugins/sql/limitation/#query-processing-engines) for more details.
+The nested function is used in the `SELECT` clause to unnest nested object type collections. The nested collection is flattened and a cartesian product is returned when querying against two or more nested collections.
 
 ### Syntax
 
@@ -209,3 +210,7 @@ The results contain documents that match the nested query:
 :---------|
 2  |
 
+
+### Limitations
+
+The nested function is supported in the V2 engine in the `SELECT` and `WHERE`(Syntax Option 2) clauses, see [query-processing-engines](https://opensearch.org/docs/latest/search-plugins/sql/limitation/#query-processing-engines) for more details.
