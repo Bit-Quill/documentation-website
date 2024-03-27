@@ -8,9 +8,9 @@ redirect_from:
   - /query-dsl/aggregations/metric/median-absolute-deviation/
 ---
 
-# Median Absolute Deviation aggregations
+# Median Absolute Deviation Aggregations
 
-The `median_absolute_deviation` metric is a single-value metric aggregation that returns median absolute deviation field. Median absolute deviation is a statistical measure of data variability. It is used to measure dispersion from the median, may be less impacted by outliers in a data set. 
+The `median_absolute_deviation` metric is a single-value metric aggregation that returns median absolute deviation field. Median absolute deviation is a statistical measure of data variability. It is used to measure dispersion from the median, may be less impacted by outliers in a dataset. 
 
 Median absolute deviation is calculated with:<br>
 median_absolute_deviation = median(|X<sub>i</sub> - Median(X<sub>i</sub>)|)
@@ -58,9 +58,7 @@ GET opensearch_dashboards_sample_data_flights/_search
       "value": 1829.8993624441966
     }
   }
-}}
-
-
+}
 ```
 
 ### Missing
