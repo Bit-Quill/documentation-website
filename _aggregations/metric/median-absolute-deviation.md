@@ -62,7 +62,7 @@ GET opensearch_dashboards_sample_data_flights/_search
 ```
 
 ### Missing
-If there are documents in your index that are missing fields and you wish to set a default value for those documents, use the `missing` parameter to specify the default value for any missing fields from documents.
+You can set a default value for missing fields from documents by specifying the `missing` parameter. This could be a missing field or a null value in a field.
 
 ```json
 GET opensearch_dashboards_sample_data_flights/_search
