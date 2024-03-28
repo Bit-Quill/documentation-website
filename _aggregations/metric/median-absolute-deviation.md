@@ -15,7 +15,7 @@ The `median_absolute_deviation` metric is a single-value metric aggregation that
 Median absolute deviation is calculated with:<br>
 median_absolute_deviation = median(|X<sub>i</sub> - Median(X<sub>i</sub>)|)
 
-The following example calculates the median absolute deviation of the `DistanceMiles` field of the opensearch_dashboards_sample_data_flights index:
+The following example calculates the median absolute deviation of the `DistanceMiles` field of the opensearch_dashboards_sample_data_flights:
 
 
 ```json
