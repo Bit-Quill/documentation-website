@@ -45,3 +45,4 @@ OpenSearch supports the following metric aggregations:
 - [Sum]({{site.url}}{{site.baseurl}}/aggregations/metric/sum/)
 - [Top hits]({{site.url}}{{site.baseurl}}/aggregations/metric/top-hits/)
 - [Value count]({{site.url}}{{site.baseurl}}/aggregations/metric/value-count/)
+- [Weighted average]({{site.url}}{{site.baseurl}}/aggregations/metric/weighted-average/)

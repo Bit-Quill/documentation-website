@@ -10,14 +10,19 @@ redirect_from:
 
 # Weighted average aggregations
 
-The `weighted average` metric is a multi-value metric aggregations that returns the weighted average value.
+The `weighted average` metric is a multi-value metric aggregations that returns the weighted average value. Weighted average can be used when calculating grades for students, where various assignments and exams make-up the final grade of 100%. 
 
 
-A script has four stages: the initial stage, the map stage, the combine stage, and the reduce stage.
+A weighted average has two fields, a value and a weight.
 
-* `value`: value of 
+* `value`: value that the weight is applied to
+  * `missing`: (optional) to apply a default value for any missing/null value fields
 * `weight`: weight that the value is applied for
+  * `missing`: (optional) to apply a default weight for any missing/null weight fields
 
+Every value field is applied with the respective value in the weight field.
+
+![Weighted average formula]({{site.url}}{{site.baseurl}}/images/aggregations/metric/weighted-average.png)
 
 ```json
 GET opensearch_dashboards_sample_data_ecommerce/_search
@@ -66,3 +71,27 @@ GET opensearch_dashboards_sample_data_ecommerce/_search
   }
 }
 ```
+
+## Example with optional `missing` field
+
+```json
+GET opensearch_dashboards_sample_data_ecommerce/_search
+{
+  "size": 0,
+  "aggs": {
+    "Weighted_average_response": {
+      "weighted_avg": {
+        "value": {
+          "field": "taxless_total_price",
+          "missing": 100
+        },
+        "weight": {
+          "field": "total_quantity",
+          "missing": 1
+        }
+      }
+    }
+  }
+}
+```
+{% include copy-curl.html %}
