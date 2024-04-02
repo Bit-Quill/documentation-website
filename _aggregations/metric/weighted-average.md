@@ -72,7 +72,7 @@ GET opensearch_dashboards_sample_data_ecommerce/_search
 }
 ```
 
-## Example with optional `missing` field
+#### Example with optional `missing` field
 
 ```json
 GET opensearch_dashboards_sample_data_ecommerce/_search
